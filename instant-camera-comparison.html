@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+    <meta name="description" content="Compa-re and find the best products! including coffee, instant cameras and more!">
+
+    <title>Compare coffee, instant cameras and more!</title>
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+   <!--material-->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+   <link rel="stylesheet" href="dist/material-cards.css">
+
+
+
+   <!--custom css-->
+   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/stylecamera.css">
+
+    <!--jquery library-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- GOOGLE ANALYTICS-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-88088862-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+   <!-- Facebook Pixel Code -->
+   <script>
+   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+       document,'script','https://connect.facebook.net/en_US/fbevents.js');
+       fbq('init', '1653328411633588'); // Insert your pixel ID here.
+       fbq('track', 'PageView');
+   </script>
+   <noscript>
+     <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=1653328411633588&ev=PageView&noscript=1"/>
+   </noscript>
+   <!-- DO NOT MODIFY -->
+   <!-- End Facebook Pixel Code -->
+   <script>
+   $( "#developTimeSlider" ).slider({
+   value: 0,
+   min: 0,
+   max: 30,
+   slide: function( event, ui ) {
+    $("#developTimeInput" ).val(addCommas(ui.value.toString()));
+   }
+ });
+   </script>
+</head>
+
+<body class="camera-page">
+  <div class="row" id="header">
+    <div id="opacityHeader" class="container">
+      <div class="row" id="rowHeader">
+        <div class="col-md-3 col-sm-3 col-xs-3" id="titleHeader">
+
+          <a href="http://www.compatrends.com">
+          <div id="titleHeaderMid">
+          </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <div id="titleHeaderBot">
+            <!--Search section-->
+            <div id="searchDiv">
+              <div class="filter-container">
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="searchInput">
+                  <label class="mdl-textfield__label" for="sample1">Search...</label>
+                </div>
+              </div>
+            </div>
+            <!--Search section-->
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <div id="btnCompare"  data-toggle="modal" data-target="#flipFlop">
+            <img id="imgCompareHere" src="img/btnCompareHere.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+    <div class="row">
+      <div class="col-md-2 col-sm-2 col-xs-2" id="leftBar">
+        <div class="filterOpt">
+          <h5 class="filterTitle">Battery Life</h5>
+          <select class="form-control srch" id="srchBat">
+            <option >All</option>
+            <option >50 shots</option>
+            <option >100 shots</option>
+            <option >300 shots</option>
+            <option >400 shots</option>
+          </select>
+
+          <h5 class="filterTitle">Develop Time</h5>
+          <div class="container" id="developTimeInput">30 min</div>
+          <input class="mdl-slider mdl-js-slider" id="developTimeSlider" type="range" min="0" max="30" value="30" step="5" tabindex="0"/>
+
+          <table>
+            <h5 class="filterTitle">Film Type</h5>
+            <tr>
+              <label for="InstaxMini" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                <input type="checkbox" id="InstaxMini" value="InstaxMini" class="mdl-checkbox__input">
+                <span class="mdl-checkbox__label">Instax Mini</span>
+              </label>
+              <label for="InstaxWide" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                <input type="checkbox" id="InstaxWide" value="InstaxWide"  class="mdl-checkbox__input">
+                <span class="mdl-checkbox__label">Instax Wide</span>
+              </label>
+              <label for="Impossible600" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                <input type="checkbox" id="Impossible600" value="Impossible600"  class="mdl-checkbox__input">
+                <span class="mdl-checkbox__label">Imposible 600</span>
+              </label>
+              <label for="Zink" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                <input type="checkbox" id="Zink" value="Zink"  class="mdl-checkbox__input">
+                <span class="mdl-checkbox__label">Zink</span>
+              </label>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-xs-10">
+        <!--Grid section-->
+        <div class="row active-with-click filtr-container" id="gridContainer">
+
+        </div>
+        <!--Grid section-->
+      </div>
+    </div>
+
+
+    <!--the modal-->
+    <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+       <div class="container"  id="containerContainerModal">
+
+           <div id="containerModal">
+           </div>
+
+       </div>
+    </div>
+
+  <!-- jQuery Version 1.11.1 -->
+   <script src="js/jquery.js"></script>
+
+   <!-- Bootstrap Core JavaScript -->
+   <script src="js/bootstrap.min.js"></script>
+
+   <script type="text/javascript" src="js/compacamera.js"></script>
+
+
+
+</body>
+
+</html>

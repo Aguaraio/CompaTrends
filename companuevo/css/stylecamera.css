@@ -1,0 +1,146 @@
+#header, #titleHeaderMid {
+    background-position: center;
+}
+#compareBtnDiv, #rowHeader, #titleHeader {
+    height: 100%}
+.checkDiv, .mdl-card__actions {
+    position: absolute;
+}
+.mdl-cel, .rowModal {
+    margin-bottom: 20px;
+}
+#header {
+    height: 12rem;
+    background-image: url(../img/camerawp.jpg);
+    background-size: cover;
+    border-bottom: 3px solid #000;
+}
+#opacityHeader {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .65);
+}
+#titleHeaderTop {
+    height: 10%}
+#titleHeaderMid {
+    height: 50%;
+    width: 110%;
+    margin-left: -30px;
+    background-image: url(../img/compalogo2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#searchDiv {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 1);
+    border: 3px solid #000;
+}
+.mdl-textfield {
+    margin-left: 5rem;
+    width: 80%}
+#compareDiv {
+    height: 17rem;
+}
+#compareBtn {
+    margin-top: 6rem;
+    margin-left: 3rem;
+}
+#compareTxt {
+    color: #FFDD1B;
+    font-size: 85px;
+    font-family: Pacifico;
+}
+#compareBtn #compareTxt:hover {
+    text-decoration: none;
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes neon3 {
+    from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+}
+to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+}
+}.checkDiv {
+    top: 1rem;
+    right: 2rem;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+.checkDivOn {
+    background-color: red;
+}
+.demo-card-square.mdl-card {
+    width: 25.35rem;
+    height: 47rem;
+}
+.demo-card-square>.card-title {
+    color: #fff;
+    min-height: 17rem;
+}
+.mdl-card__supporting-text {
+    width: 100%}
+.mdl-grid {
+    margin-top: 15px;
+}
+.mdl-cel {
+    margin-left: 25px;
+    margin-right: 15px;
+}
+.mdl-button {
+    opacity: .8;
+}
+.mdl-card__title {
+    background: linear-gradient(to right, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0));
+    width: 100%}
+.modal-content, .modal-dialog {
+    width: 100%;
+    height: 100%}
+.modal-body {
+    height: 90%}
+.impar {
+    background: rgba(0, 0, 0, .05);
+}
+.mc-content {
+    height: 23rem;
+}
+#divAmazon, .imgAmazon {
+    height: 100%}
+.mc-description {
+    margin: -20px -20px -70px;
+}
+.imgAmazon {
+    text-align: center;
+}
+.imgAmazon a img {
+    height: 100%;
+    width: auto;
+    mix-blend-mode: multiply;
+}
+.imgAmazon:hover, .imgAmazonAdd {
+    background-color: rgba(255, 255, 255, 0)!important;
+}
+.rowWinner {
+    background-color: #4CA64C;
+}
+.rowDarkRoast {
+    background-color: #323232;
+    color: #fff;
+}
+.rowMediumRoast {
+    background-color: #6f6f6f;
+    color: #fff;
+}
+.rowLoser {
+    background-color: #C94C4C;
+}
+
+h6{
+
+  min-height: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  bottom: 10rem;
+}
