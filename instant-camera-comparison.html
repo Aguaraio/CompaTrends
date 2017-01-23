@@ -26,6 +26,8 @@
    <!--custom css-->
    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/stylecamera.css">
+    <link rel="stylesheet" type="text/css" href="css/btnStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/modalStyle.css">
 
     <!--jquery library-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -70,14 +72,15 @@
 
 <body class="camera-page">
   <div class="row" id="header">
-    <div id="opacityHeader" class="container">
+    <div id="opacityHeader">
       <div class="row" id="rowHeader">
         <div class="col-md-3 col-sm-3 col-xs-3" id="titleHeader">
 
-          <a href="http://www.compatrends.com">
-          <div id="titleHeaderMid">
-          </div>
-          </a>
+
+            <a href="http://www.compatrends.com">
+            <img id="logoCompa" src="img/logoWhite.png"/>
+            </a>
+
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6">
           <div id="titleHeaderBot">
@@ -93,9 +96,19 @@
             <!--Search section-->
           </div>
         </div>
-        <div class="col-md-3 col-sm-3 col-xs-3">
-          <div id="btnCompare"  data-toggle="modal" data-target="#flipFlop">
-            <img id="imgCompareHere" src="img/btnCompareHere.png"/>
+        <div class="col-md-3 col-sm-3 col-xs-3" id="categoryHeader">
+          <div id="categoryContainer">
+            <div id="categoryBtn">
+              <div class="dropdown">
+                <button class="btn dropdown-toggle categoryContent" type="button" data-toggle="dropdown">Categories
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://www.compatrends.com/coffee-comparison.html">Coffee</a></li>
+                    <li><a href="http://www.compatrends.com/instant-camera-comparison.html">Instan Cameras</a></li>
+                    <li><a href="http://www.compatrends.com/headphone-comparison.html">Headphones</a></li>
+                  </ul>
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -104,7 +117,7 @@
   </div>
 
 
-    <div class="row">
+    <div class="mdl-grid">
       <div class="col-md-2 col-sm-2 col-xs-2" id="leftBar">
         <div class="filterOpt">
           <h5 class="filterTitle">Battery Life</h5>
@@ -143,7 +156,7 @@
           </table>
         </div>
       </div>
-      <div class="col-md-10 col-sm-10 col-xs-10">
+      <div class="col-md-10 col-sm-10 col-xs-10" id="rightGrid">
         <!--Grid section-->
         <div class="row active-with-click filtr-container" id="gridContainer">
 
@@ -152,15 +165,26 @@
       </div>
     </div>
 
+    <!--the group of selected items modal-->
+    <div class="row iModal hidden" id="selectedItemsModal">
 
-    <!--the modal-->
+        <div class="col-md-10 col-sm-10 col-xs-10" id="listItemsContainer"><div id="listItems"></div></div>
+        <div id="leftArrow"><span class="glyphicon glyphicon-chevron-left arrows"></span></div>
+          <div id="rightArrow"><span class="glyphicon glyphicon-chevron-right arrows"></span></div>
+
+      <div class="col-md-2 col-sm-2 col-xs-2" id="btnCompare">
+          <a id="imgCompareHere" class="btnOpenModal button-3" data-toggle="modal" data-target="#flipFlop"><span>COMPARE HERE</span></a>
+      </div>
+
+    </div>
+
+
+    <!--the comparison modal-->
     <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-       <div class="container"  id="containerContainerModal">
-
-           <div id="containerModal">
-           </div>
-
-       </div>
+      <div class="container"  id="containerContainerModal">
+          <div id="containerModal">
+          </div>
+      </div>
     </div>
 
   <!-- jQuery Version 1.11.1 -->

@@ -9,6 +9,7 @@ $(function() {
   var countModalItem = 0;
   var contiModalItem = 0;
 
+  //fill datatable
   table[0]=["Koffee Kult" , "Dark Roast" , "http://amzn.to/2gD4lL4", "Cinnamon", "Dark", "Colombia", "Arabica", "French Press, Pour Over, Drip and Espresso coffee drinks", "low", '<a href="https://www.amazon.com/Koffee-Kult-Highest-Delicious-Organically/dp/B00PV4FG3Q/ref=as_li_ss_il?_encoding=UTF8&refRID=G8D0HHZ19D7Z9HWZ18FV&th=1&linkCode=li3&tag=compa0ae-20&linkId=243b242fda97bfcf0a4dcc62edda4534" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00PV4FG3Q&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B00PV4FG3Q" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Caffeinated"];
   table[1]=["Death Wish", "Death Wish", "http://amzn.to/2gfetGa", "cherry and chocolate", "Dark", "Vietnam", "Robusta", "French Press, Pour Over, Drip and Espresso coffee drinks", "low", '<a href="https://www.amazon.com/Death-Wish-Coffee-Strongest-Certified/dp/B006CQ1ZHI/ref=as_li_ss_il?s=grocery&ie=UTF8&qid=1479761493&sr=1-8&keywords=coffee&th=1&linkCode=li3&tag=compa0ae-20&linkId=839ea209ca8e7ea0f9801a3cc1c582d0" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B006CQ1ZHI&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B006CQ1ZHI" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />', "Caffeinated"];
   table[2]=["Folgers", "Classic Roast", "http://amzn.to/2gvUGVH", "Pure","Medium", "Central America","Arabica","French Press, Pour Over, Drip and Espresso coffee drinks","normal",'<a href="https://www.amazon.com/Folgers-Classic-Roast-Ground-Coffee/dp/B010ULFOWC/ref=as_li_ss_il?s=grocery&ie=UTF8&qid=1479761493&sr=1-9&keywords=coffee&th=1&linkCode=li3&tag=compa0ae-20&linkId=d187036c19e2e2cc7e668c6267919c43" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B010ULFOWC&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B010ULFOWC" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Caffeinated"];
@@ -33,7 +34,7 @@ $(function() {
   table[21]=["Dunkin' Donuts" , "Original Blend" , "http://amzn.to/2hrmqem", "Pure", "Medium", "South America", "Arabica", "French Press, Pour Over, Drip and Espresso coffee drinks", "Low", '<a href="https://www.amazon.com/Dunkin-Donuts-Original-Medium-Coffee/dp/B00JI498GG/ref=as_li_ss_il?_encoding=UTF8&refRID=HDSP7W3VQ07S2SFDRX6P&th=1&linkCode=li3&tag=compa0ae-20&linkId=5304565939a91480c0e0709c89a2f716" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00JI498GG&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B00JI498GG" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Caffeinated"];
   table[22]=["Dunkin' Donuts" , "Original Blend" , "http://amzn.to/2hLMWLR", "Pure", "Medium", "South America", "Arabica", "Keurig K-Cup", "Low", '<a href="https://www.amazon.com/Dunkin-Donuts-Coffee-K-cup-Original/dp/B00XA1075Y/ref=as_li_ss_il?_encoding=UTF8&refRID=GEXRNW0YHM6T9KQRYRKT&th=1&linkCode=li3&tag=compa0ae-20&linkId=b1f0ee46822faf40fc76e8caaffc9713" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00XA1075Y&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B00XA1075Y" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Caffeinated"];
 
-
+  //check if calling index is home-page
   if ($('body.home-page').length > 0) {
     for (var i = 0; i < table.length; i++) {
       for (var j = 0; j < table[i].length; j++) {
@@ -82,6 +83,9 @@ $(function() {
                             '</div>'+
                           '</div>'+ //specDiv
                       '</div></a>'+ //hoverDiv
+                      '<div class="hoverthisDiv">'+
+                        'Hover this card'+
+                      '</div>'+
                   '</div>'+
                 '</div>';
 
@@ -224,9 +228,8 @@ $(function() {
 
                   '</div>'+
                   '<div class="row btnDiv">'+
-                      //cambiar botones
-                      '<div class="col-md-6 col-sm-6 col-xs-6 btnToCompa"><a id="btnCompare'+ i +'" class="btn button-1 imgCompare">COMPARE</a></div>'+
-                      '<div class="col-md-6 col-sm-6 col-xs-6 btnToAmazon"><a href="'+ varCard[2] +'" target="_blank" id="btnAmazon'+ i +'" class="btn button-2 imgBuyNow">BUY NOW!</a></div>'+
+                    '<a class="col-md-6 col-sm-6 col-xs-6"><div id="btnCompare'+ i +'" class="btn button-1 imgCompare">COMPARE</div></a>'+
+                    '<a class="col-md-6 col-sm-6 col-xs-6" href="'+ varCard[2] +'" target="_blank"><div id="btnAmazon'+ i +'" class="btn button-2 imgBuyNow">BUY NOW!</div></a>'
                   '</div>'+
                 '</div>';
 
@@ -236,44 +239,44 @@ $(function() {
   }
 
    ////////////
-  //add to compa
-  $('.imgCompare').bind('click',(event)=>{
+  //add to iModal
+  function handleiModal(container,str){
     //obtenemos el id del tile seleccionado
-    var container = $(event.target).closest('.rowModal').attr('id');
     var idTile = container.substring(4);
 
-    //obtenemos estado del tile
-    var str ='#'+ $(event.target.id)['selector'];
-
     if ($(str).hasClass('botonToggle')) {
-
       contiModalItem += 1;
-      console.log(contiModalItem);
       //se agrega tile al modal
       addtoiModal(idTile);
     }else{
-
       contiModalItem -= 1;
-      console.log(contiModalItem);
       //se elimina el tile seleccionado
       removefromiModal(idTile);
     }
     if (contiModalItem > 0) {
-      //$('#selectedItemsModal').css('visibility', 'visible');
       $('#selectedItemsModal').removeClass('hidden');
       $('#selectedItemsModal').addClass('visible');
     }
-    if(contiModalItem == 0){
-      //$('#selectedItemsModal').css('visibility', 'hidden');
+    if(contiModalItem == 0) {
       $('#selectedItemsModal').removeClass('visible');
       $('#selectedItemsModal').addClass('hidden');
     }
 
-  });
+  };
+  //////////////
+  //add to compa
+  function addtoCompareModal(){
+    //get items list from iModal
+    var arr = $("#listItems > div").map(function() {
+      return this.id
+    });
+    generateCompareModal(arr.get());
+
+  };
    /////////////////
   //eliminate Modal
   function removefromiModal(idTile) {
-    var tile = $('#selectedItemsModal').find('#modalItem'+ idTile);
+    var tile = $('#listItems').find('#modalItem'+ idTile);
     $(tile).remove();
   }
   function eliminateModal(idTile){
@@ -287,25 +290,32 @@ $(function() {
    //generate modal
   function addtoiModal(idTile) {
     var generatedDiv;
-    generatedDiv = '<div class="col-md-3 col-sm-6 col-xs-12 rowModal" id="modalItem'+ idTile +'">'+
-                    '<div class="demo-card-square mdl-card mdl-shadow--2dp">'+
+    generatedDiv = '<div class="imodalItem" id="modalItem'+ idTile +'">'+
+                    '<div class="demo-card-square mdl-cardiModal mdl-shadow--2dp">'+
                       '<div class="card-title">'+
                         '<div class="imgAmazon">'+ table[idTile][9] +'</div>'+  /*IMAGE*/
+                        '<div class="btnClose">'+
+                          '<span class="glyphicon glyphicon-remove"></span>'+
+                        '</div>'+
                       '</div>'+
+
                     '</div>'+
                   '</div>';
-             $('#selectedItemsModal').append(generatedDiv);
+    $('#listItems').append(generatedDiv);
 
   }
-  function generateModal(idTile){
+
+  function generateCompareModal(idTiles){
+    //delete all the cards from containerModal
+    $('#containerModal').children().remove();
     var generatedDiv;
-    for (var j = 0; j < table[idTile].length; j++) {
-      varCard[j]= table[idTile][j];
-    }
-    generatedDiv = '<div class="col-md-4 col-sm-6 col-xs-12 modalmargin" id="modalItem'+ idTile +'">'+
+    var substridTile = "";
+    for (var i = 0; i < idTiles.length; i++) {
+      substridTile = idTiles[i].substring(9);
+      generatedDiv = '<div class="col-md-4 col-sm-6 col-xs-12 modalmargin" id="modalItem'+ substridTile +'">'+
                      '<div class="demo-card-square mdl-card modal-card mdl-shadow--2dp modal-dialog" style="border:5px solid #000">'+
                        '<div class="card-title">'+
-                         '<div class="imgAmazonModal">'+ varCard[9] +'</div>'+  /*IMAGE*/
+                         '<div class="imgAmazonModal">'+ table[substridTile][9] +'</div>'+  /*IMAGE*/
                        '</div>'+
                          '<div class="mdl-card__supporting-text">'+
                             '<div class="row par">'+
@@ -313,7 +323,7 @@ $(function() {
                                  '<div class="lblName"><strong>Name</strong></div>'+
                                '</div>'+
                                '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                                 '<div class="nameProd">'+ varCard[1] +'</div>'+ /*NAME*/
+                                 '<div class="nameProd">'+ table[substridTile][1] +'</div>'+ /*NAME*/
                                '</div>'+
                              '</div>'+
                              '<div class="row impar">'+
@@ -321,7 +331,7 @@ $(function() {
                                  '<div class="lblBrand"><strong>Brand</strong></div>'+
                                '</div>'+
                                '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                                 '<div class="brandProd" >'+ varCard[0] +'</div>'+ /*BRAND*/
+                                 '<div class="brandProd" >'+ table[substridTile][0] +'</div>'+ /*BRAND*/
                                '</div>'+
                              '</div>'+
                              '<div class="row par">'+
@@ -329,7 +339,7 @@ $(function() {
                                    '<div class="lblPrice"><strong>Price</strong></div>'+
                                  '</div>'+
                                  '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                                   '<a class="priceProd" href="'+ varCard[2] +'">show price</a>'+ /*PRICE*/
+                                   '<a class="priceProd" href="'+ table[substridTile][2] +'">show price</a>'+ /*PRICE*/
                                  '</div>'+
                              '</div>'+
                              '<div class="row impar">'+
@@ -337,7 +347,7 @@ $(function() {
                                  '<div class="lblFlavor"><strong>Flavor</strong></div>'+
                                '</div>'+
                                '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                                 '<div class="flavorProd idbtn">'+ varCard[3] +'</div>'+ /*FLAVOR*/
+                                 '<div class="flavorProd idbtn">'+ table[substridTile][3] +'</div>'+ /*FLAVOR*/
                                '</div>'+
                             '</div>'+
                             '<div class="row par rowModalRoast">'+
@@ -345,7 +355,7 @@ $(function() {
                                   '<div class="lblRoast"><strong>Roast</strong></div>'+
                                '</div>'+
                                '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                                  '<div class="roastProd idbtn">'+ varCard[4] +'</div>'+ /*ROAST*/
+                                  '<div class="roastProd idbtn">'+ table[substridTile][4] +'</div>'+ /*ROAST*/
                                '</div>'+
                            '</div>'+
                            '<div class="row impar">'+
@@ -353,7 +363,7 @@ $(function() {
                                 '<div class="lblOrigin"><strong>Origin</strong></div>'+
                               '</div>'+
                               '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                                '<div class="originProd idbtn">'+ varCard[5] +'</div>'+ /*ORIGIN*/
+                                '<div class="originProd idbtn">'+ table[substridTile][5] +'</div>'+ /*ORIGIN*/
                               '</div>'+
                           '</div>'+
                           '<div class="row par">'+
@@ -361,7 +371,7 @@ $(function() {
                                 '<div class="lblType"><strong>Type</strong></div>'+
                               '</div>'+
                               '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                                '<div class="typeProd idbtn">'+ varCard[6] +'</div>'+ /*TYPE*/
+                                '<div class="typeProd idbtn">'+ table[substridTile][6] +'</div>'+ /*TYPE*/
                               '</div>'+
                           '</div>'+
 
@@ -370,7 +380,7 @@ $(function() {
                               '<div class="lblAdicity"><strong>Acidity</strong></div>'+
                             '</div>'+
                             '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                              '<div class="acidProd idbtn">'+ varCard[8] +'</div>'+ /*ACIDITY*/
+                              '<div class="acidProd idbtn">'+ table[substridTile][8] +'</div>'+ /*ACIDITY*/
                             '</div>'+
                           '</div>'+
                           '<div class="row par">'+
@@ -378,7 +388,7 @@ $(function() {
                               '<div class="lblCafType"><strong>Caffeine Type</strong></div>'+
                             '</div>'+
                           '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                            '<div class="cafeProd idbtn">'+ varCard[10] +'</div>'+ /*CAFFEINE TYPE*/
+                            '<div class="cafeProd idbtn">'+ table[substridTile][10] +'</div>'+ /*CAFFEINE TYPE*/
                           '</div>'+
                         '</div>'+
                         '<div class="row impar">'+
@@ -386,62 +396,45 @@ $(function() {
                             '<div class="lblWork"><strong>Works with</strong></div>'+
                           '</div>'+
                           '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                            '<div class="workProd idbtn">'+ varCard[7] +'</div>'+ /*WORKS WITH*/
+                            '<div class="workProd idbtn">'+ table[substridTile][7] +'</div>'+ /*WORKS WITH*/
                           '</div>'+
                         '</div>'+
                      '</div>'+ //mdl-card__supporting-text
                    '</div>'+ //modal-card
                  '</div>'; //modalmargin
         $('#containerModal').append(generatedDiv);
+
+      }
   };
-   //generate modal
+
   /////////////////
-
-
- //////////////////
-//funtion random
-  function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
- //function random
-//////////////////
-
-
- /////////////////
 //Search section
-  $('#searchInput').keypress((e)=>{
-    var keycode = (e.keyCode ? e.keyCode : e.which);
-    if(keycode== 13){
-      var str = $("#searchInput").val();
-      var divFound = $(".rowModal").find(".idbtn:icontains("+ str +")");
-      var divNotFound = $(".rowModal").find(".idbtn:not(:icontains("+ str +"))");
-      $(divNotFound).parents(".rowModal").hide(300);
-      $(divFound).parents(".rowModal").show(300);
-    }
-  });
- //Search section
+ $('#searchInput').keypress((e)=>{
+   if ($('body.coffee-page').length > 0)  {
+     var keycode = (e.keyCode ? e.keyCode : e.which);
+     if(keycode== 13){
+       var str = $("#searchInput").val();
+       var divFound = $(".rowModal").find(".idbtn:icontains("+ str +")");
+       var divNotFound = $(".rowModal").find(".idbtn:not(:icontains("+ str +"))");
+       $(divNotFound).parents(".rowModal").hide(300);
+       $(divFound).parents(".rowModal").show(300);
+     }
+   }
+ });
+//Search section
 /////////////////
 
- /////////////////////////
+/////////////////////////
 //new contains function
 jQuery.expr[':'].icontains = function(a, i, m) {
-  return jQuery(a).text().toUpperCase()
-      .indexOf(m[3].toUpperCase()) >= 0;
+ return jQuery(a).text().toUpperCase()
+     .indexOf(m[3].toUpperCase()) >= 0;
 };
- //new contains function
+//new contains function
 /////////////////////////
 
- /////////////////////
-//card-title hover
-/*$('.imgAmazon').hover(()=>{
-  console.log("asd");
-  $(this).toggleClass('imgAmazon_hover');
-});*/
-
- //card-title hover
-/////////////////////
+  ///////////////
+  //filter section
 
       $('.srch').on('change', ()=>{
         $('.rowModal').hide(300);
@@ -475,51 +468,107 @@ jQuery.expr[':'].icontains = function(a, i, m) {
         }
 
       });
+  //filter section
+ ///////////////
 
 /////////
 //handle on click btn compare, btn Buy
   //compare
-  $('.btnToCompa').bind('mousedown', (event)=>{
+  $('.imgCompare').bind('mousedown', (event)=>{
     var btn ='#'+ $(event.target.id)['selector'];
     $(btn).removeClass('button-1');
-
-    $(btn).addClass('pressedOut');
-
-    /*if ($(str).hasClass('botonToggle')) {
-      $(str).attr('src','img/btnCompare2gris.png');
-    }else{
-      $(str).attr('src','img/btnCompare2.png');
-    }*/
+    $(btn).addClass('pressedOut-1');
 
   }).on('mouseup', (event)=>{
+    var container = $(event.target).closest('.rowModal').attr('id');
     var btn ='#'+ $(event.target.id)['selector'];
-    $(btn).removeClass('pressedOut');
+    $(btn).removeClass('pressedOut-1');
     $(btn).addClass('button-1');
-
     $(btn).toggleClass('botonToggle');
-
     if ($(btn).hasClass('botonToggle')) {
       $(btn).text("DESELECT");
     }else {
       $(btn).text("COMPARE");
     }
-
-    /*if ($(str).hasClass('botonToggle')) {
-      $(str).attr('src','img/btnComparegris.png');
-    }else{
-      $(str).attr('src','img/btnCompare.png');
-    }*/
-
-
+    handleiModal(container,btn);
   });
 
   //AMAZON
   $('.btnToAmazon').bind('mousedown', (event)=>{
-    var str ='#'+ $(event.target.id)['selector'];
-    $(str).attr('src','img/btnbuyNow2.png');
+    var btn ='#'+ $(event.target.id)['selector'];
+    $(btn).removeClass('button-2');
+    $(btn).addClass('pressedOut-2');
   }).on('mouseup', (event)=>{
-    var str ='#'+ $(event.target.id)['selector'];
-    $(str).attr('src','img/btnBuyNow.png');
+    var btn ='#'+ $(event.target.id)['selector'];
+    $(btn).removeClass('pressedOut-2');
+    $(btn).addClass('button-2');
   });
+ //handle on click btn compare, btn Buy
+/////////
+
+ ///////////////
+//handle glyphicon-remove
+$(document).on('click','.glyphicon-remove',(event)=>{
+  var target = $(event.target).closest('.imodalItem');
+  //delete from iModal
+  target.remove();
+
+  //change button css
+  var btnToChange = $(target).attr('id').substring(9);
+  var btn ='#btnCompare' + btnToChange;
+  $(btn).toggleClass('botonToggle');
+  if ($(btn).hasClass('botonToggle')) {
+    $(btn).text("DESELECT");
+  }else {
+    $(btn).text("COMPARE");
+  }
+
+  //hide iModal
+  if ($(btn).hasClass('botonToggle')) {
+    contiModalItem += 1;
+  }else{
+    contiModalItem -= 1;
+  }
+  if (contiModalItem > 0) {
+    $('#selectedItemsModal').removeClass('hidden');
+    $('#selectedItemsModal').addClass('visible');
+  }
+  if(contiModalItem == 0) {
+    $('#selectedItemsModal').removeClass('visible');
+    $('#selectedItemsModal').addClass('hidden');
+  }
+});
+ //handle glyphicon-remove
+///////////////
+
+////////////
+//handle imgCompareHere
+  $('#imgCompareHere').click(()=>{
+    addtoCompareModal();
+  });
+//handle compare btn
+////////////
+
+//slide show
+var view = $("#listItems");
+var move = "100px";
+var sliderLimit = -750
+
+$("#rightArrow").click(function(){
+
+    var currentPosition = parseInt(view.css("left"));
+    if (currentPosition >= sliderLimit){
+      view.stop(false,true).animate({left:"-="+move},{ duration: 400});
+    }
+
+});
+
+$("#leftArrow").click(function(){
+
+    var currentPosition = parseInt(view.css("left"));
+    if (currentPosition < 0) view.stop(false,true).animate({left:"+="+move},{ duration: 400})
+
+});
+
 
 });

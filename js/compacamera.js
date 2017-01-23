@@ -1,5 +1,14 @@
 $(function() {
+  //variables globales
   var table=[];
+  var FilterArray = [];
+  var htmToModal=[];
+  var modalCount = 0;
+  var varCard= [];
+  var htmlStr='';
+  var countModalItem = 0;
+  var contiModalItem = 0;
+
   table[0]= ["Fujifilm",'<a href="https://www.amazon.com/Fujifilm-INSTAX-Mini-Instant-Blue/dp/B00AWKJPOA/ref=as_li_ss_il?ie=UTF8&qid=1479909261&sr=8-3&keywords=fujifilm+mini+8&th=1&linkCode=li3&tag=compa0ae-20&linkId=701b881d2dafa97387c891a229e4cb60" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00AWKJPOA&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B00AWKJPOA" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Mini 8",'"<a href="http://amzn.to/2gKQJxt" target="_blank">Instax Mini </a>"',"2 x AA","100 shots","1/60","60mm","f/12.7","Indoor light, Cloudy/Shade, Partly Sunny, or Bright Sun","Yes","5 min",'http://amzn.to/2fr7GtZ',"B00AWKJPOA"];
   table[1]= ["Fujifilm", '<a href="https://www.amazon.com/Fujifilm-Instax-Mini-70-Instant/dp/B015R3WUNO/ref=as_li_ss_il?ie=UTF8&qid=1479909156&sr=8-1&keywords=fujifilm+mini+70&linkCode=li3&tag=compa0ae-20&linkId=5f55c992a71a41c65492c895b0a91baa" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B015R3WUNO&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B015R3WUNO" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Mini 70",'"<a href="http://amzn.to/2gKQJxt" target="_blank">Instax Mini </a>"',"2 x CR2","300 shots","½- to 1/400","60mm","f/12.7 ","Selfie, Auto-Exposure, Self timer with 2 shots, Macro, Hi-Key, Landscape","Yes","5 min",'http://amzn.to/2gzHr5J',"B015R3WUNO"];
   table[2]= ["Fujifilm", '<a href="https://www.amazon.com/Fujifilm-Instax-Mini-Neo-Classic/dp/B00FR85IRK/ref=as_li_ss_il?ie=UTF8&qid=1479909124&sr=8-1&keywords=fujifilm+mini+90&linkCode=li3&tag=compa0ae-20&linkId=ce9fd460268422adb61e993e18a95aa8" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00FR85IRK&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B00FR85IRK" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Mini 90",'"<a href="http://amzn.to/2gKQJxt" target="_blank">Instax Mini </a>"',"Lithium Ion","100 shots","½- to 1/400","60mm ","f/12.7 ","Dark, Normal, Light, Macro","Yes","5 min",'http://amzn.to/2gAVF79',"B00FR85IRK"];
@@ -14,13 +23,8 @@ $(function() {
   table[11]= ["Lomography",'<a href="https://www.amazon.com/dp/B00PW14N5U/ref=as_li_ss_il?_encoding=UTF8&th=1&linkCode=li3&tag=compa0ae-20&linkId=db2b5cc18f62676126508c6f80f1eef3" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00PW14N5U&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B00PW14N5U" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Lomo Instant",'"<a href="http://amzn.to/2gKQJxt" target="_blank">Instax Mini </a>"',"4 x AAA","100 shots","1/125","27mm","f/8-f/32","Day, Nigth, Bright Sun","Yes","5 min",'http://amzn.to/2gIsSOk'];
   table[12]= ["Polaroid",'<a href="https://www.amazon.com/Polaroid-Z2300-Digital-Instant-Camera/dp/B008GVXKUW/ref=as_li_ss_il?s=photo&ie=UTF8&qid=1481725256&sr=1-38&keywords=instant+camera&linkCode=li3&tag=compa0ae-20&linkId=2cd78fae57a04784196bf963de6576ee" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B008GVXKUW&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B008GVXKUW" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Z2300",'"<a href="http://amzn.to/2gkcS2d" target="_blank">Zink</a>"',"Lithium Ion","50 shots","N/A","28mm","f/2.8","Portrait and Macro","Yes","1 min",'http://amzn.to/2hNkZDD'];
   table[13]= ["Lomography",'<a href="https://www.amazon.com/Lomography-LI200B-LomoInstant-Wide-Camera/dp/B018SRV50A/ref=as_li_ss_il?ie=UTF8&qid=1481726361&sr=8-1&keywords=lomo+wide&linkCode=li3&tag=compa0ae-20&linkId=4ca8b0c5868bfeb61d6844a7cb0c6503" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B018SRV50A&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=compa0ae-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=compa0ae-20&l=li3&o=1&a=B018SRV50A" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',"Lomo Instant Wide",'"<a href="http://amzn.to/2fr4bDT" target="_blank">Instax Wide</a>"',"4 x AA","100 shots","8 - 1/250","35mm","f/8-f/22","Automatic and Manual","Yes","5 min","http://amzn.to/2hNqNwX"];
-  var FilterArray = [];
-  var htmToModal=[];
-  var modalCount = 0;
-  var varCard= [];
-  var htmlStr='';
-  var countModalItem = 0;
 
+  //check if calling index is home-page
   if ($('body.home-page').length > 0) {
     for (var i = 0; i < table.length; i++) {
       for (var j = 0; j < table[i].length; j++) {
@@ -63,6 +67,9 @@ $(function() {
                             '</div>'+
                           '</div>'+ //specDiv
                         '</div></a>'+ //hoverDiv
+                        '<div class="hoverthisDiv">'+
+                          'Hover this card'+
+                        '</div>'+
                     '</div>'+
                   '</div>';
 
@@ -220,9 +227,8 @@ $(function() {
 
                   '</div>'+
                   '<div class="row btnDiv">'+
-                      //cambiar botones
-                      '<div class="col-md-6 col-sm-6 col-xs-6 btnToCompa"><img class="imgCompare" id="imgCompa'+ i +'" src="img/btnCompare.png" /></div>'+
-                      '<a href="'+ varCard[12] +'" target="_blank"><div class="col-md-6 col-sm-6 col-xs-6 btnToAmazon"><img class="imgBuyNow" id="imgBuy'+ i +'" src="img/btnBuyNow.png" /></div></a>'+
+                    '<a class="col-md-6 col-sm-6 col-xs-6"><div id="btnCompare'+ i +'" class="btn button-1 imgCompare">COMPARE</div></a>'+
+                    '<a class="col-md-6 col-sm-6 col-xs-6" href="'+ varCard[12] +'" target="_blank"><div id="btnAmazon'+ i +'" class="btn button-2 imgBuyNow">BUY NOW!</div></a>'
                   '</div>'+
                 '</div>';
 
@@ -231,46 +237,84 @@ $(function() {
     }
   }
 
+  ////////////
+ //add to iModal
+ function handleiModal(container,str){
+   //obtenemos el id del tile seleccionado
+   var idTile = container.substring(4);
 
-   ////////////
-  //add to compa
-  $('.btnToCompa').bind('click',(event)=>{
-    //obtenemos el id del tile seleccionado
-    var container = $(event.target).closest('.rowModal').attr('id');
-    var idTile = container.substring(4);
+   if ($(str).hasClass('botonToggle')) {
+     contiModalItem += 1;
+     //se agrega tile al modal
+     addtoiModal(idTile);
+   }else{
+     contiModalItem -= 1;
+     //se elimina el tile seleccionado
+     removefromiModal(idTile);
+   }
+   if (contiModalItem > 0) {
+     $('#selectedItemsModal').removeClass('hidden');
+     $('#selectedItemsModal').addClass('visible');
+   }
+   if(contiModalItem == 0) {
+     $('#selectedItemsModal').removeClass('visible');
+     $('#selectedItemsModal').addClass('hidden');
+   }
 
-    //obtenemos estado del tile
-    var str ='#'+ $(event.target.id)['selector'];
+ };
+ //////////////
+ //add to compa
+ function addtoCompareModal(){
+   //get items list from iModal
+   var arr = $("#listItems > div").map(function() {
+     return this.id
+   });
+   generateCompareModal(arr.get());
 
-    if ($(str).hasClass('botonToggle')) {
-      //se agrega tile al modal
-      generateModal(idTile);
-    }else{
-      //se elimina el tile seleccionado
-      eliminateModal(idTile);
-    }
-
-  });
-   /////////////////
-  //eliminate Modal
-  function eliminateModal(idTile){
-    var tile = $('#containerModal').find('#modalItem'+ idTile);
-    $(tile).remove();
-  }
-  //eliminate modal
- ///////////////////
+ };
+ /////////////////
+//eliminate Modal
+function removefromiModal(idTile) {
+  var tile = $('#listItems').find('#modalItem'+ idTile);
+  $(tile).remove();
+}
+function eliminateModal(idTile){
+  var tile = $('#containerModal').find('#modalItem'+ idTile);
+  $(tile).remove();
+}
+//eliminate modal
+///////////////////
 
     //////////////////
    //generate modal
-  function generateModal(idTile){
-    var generatedDiv;
-    for (var j = 0; j < table[idTile].length; j++) {
-      varCard[j]= table[idTile][j];
-    }
-    generatedDiv = '<div class="modalmargin" id="modalItem'+ idTile +'">'+
+   function addtoiModal(idTile) {
+     var generatedDiv;
+     generatedDiv = '<div class="imodalItem" id="modalItem'+ idTile +'">'+
+                     '<div class="demo-card-square mdl-cardiModal mdl-shadow--2dp">'+
+                       '<div class="card-title">'+
+                         '<div class="imgAmazon">'+ table[idTile][1] +'</div>'+  /*IMAGE*/
+                         '<div class="btnClose">'+
+                           '<span class="glyphicon glyphicon-remove"></span>'+
+                         '</div>'+
+                       '</div>'+
+
+                     '</div>'+
+                   '</div>';
+     $('#listItems').append(generatedDiv);
+
+   }
+
+   function generateCompareModal(idTiles){
+    //delete all the cards from containerModal
+     $('#containerModal').children().remove();
+     var generatedDiv;
+     var substridTile = "";
+     for (var i = 0; i < idTiles.length; i++) {
+       substridTile = idTiles[i].substring(9);
+       generatedDiv = '<div class="col-md-4 col-sm-6 col-xs-12 modalmargin" id="modalItem'+ substridTile +'">'+
                      '<div class="demo-card-square mdl-card modal-card mdl-shadow--2dp modal-dialog" style="border:5px solid #000">'+
                        '<div class="card-title">'+
-                         '<div class="imgAmazonModal">'+ varCard[1] +'</div>'+  /*IMAGE*/
+                         '<div class="imgAmazonModal">'+ table[substridTile][1] +'</div>'+  /*IMAGE*/
                        '</div>'+
                        '<div class="mdl-card__supporting-text">'+
                        '<div class="row par">'+
@@ -278,7 +322,7 @@ $(function() {
                             '<div class="lblName"><strong>Name</strong></div>'+
                           '</div>'+
                           '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                            '<div class="nameProd idbtn">'+ varCard[2] +'</div>'+ /*NAME*/
+                            '<div class="nameProd idbtn">'+ table[substridTile][2] +'</div>'+ /*NAME*/
                           '</div>'+
                         '</div>'+
                         '<div class="row impar">'+
@@ -286,7 +330,7 @@ $(function() {
                             '<div class="lblBrand"><strong>Brand</strong></div>'+
                           '</div>'+
                           '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                            '<div class="brandProd idbtn" >'+ varCard[0] +'</div>'+ /*BRAND*/
+                            '<div class="brandProd idbtn" >'+ table[substridTile][0] +'</div>'+ /*BRAND*/
                           '</div>'+
                         '</div>'+
                         '<div class="row par">'+
@@ -294,7 +338,7 @@ $(function() {
                               '<div class="lblPrice"><strong>Film Type</strong></div>'+
                             '</div>'+
                             '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                              '<div class="priceProd">'+ varCard[3] +'</div>'+ /*Film Type*/
+                              '<div class="priceProd">'+ table[substridTile][3] +'</div>'+ /*Film Type*/
                             '</div>'+
                         '</div>'+
                         '<div class="row impar">'+
@@ -302,7 +346,7 @@ $(function() {
                             '<div class="lblFlavor"><strong>Batteries</strong></div>'+
                           '</div>'+
                           '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                            '<div class="flavorProd idbtn">'+ varCard[4] +'</div>'+ /*Batteries*/
+                            '<div class="flavorProd idbtn">'+ table[substridTile][4] +'</div>'+ /*Batteries*/
                           '</div>'+
                        '</div>'+
                        '<div class="row par rowModalRoast">'+
@@ -310,7 +354,7 @@ $(function() {
                              '<div class="lblRoast"><strong>Battery Life</strong></div>'+
                           '</div>'+
                           '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                             '<div class="roastProd idbtn">'+ varCard[5] +'</div>'+ /*Battery Life*/
+                             '<div class="roastProd idbtn">'+ table[substridTile][5] +'</div>'+ /*Battery Life*/
                           '</div>'+
                       '</div>'+
                       '<div class="row impar">'+
@@ -318,7 +362,7 @@ $(function() {
                            '<div class="lblOrigin"><strong>Shutter Speed</strong></div>'+
                          '</div>'+
                          '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                           '<div class="originProd idbtn">'+ varCard[6] +'</div>'+ /*Shutter Speed*/
+                           '<div class="originProd idbtn">'+ table[substridTile][6] +'</div>'+ /*Shutter Speed*/
                          '</div>'+
                      '</div>'+
                      '<div class="row par">'+
@@ -326,7 +370,7 @@ $(function() {
                            '<div class="lblType"><strong>Lens Width</strong></div>'+
                          '</div>'+
                          '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                           '<div class="typeProd idbtn">'+ varCard[7] +'</div>'+ /*Lens Width*/
+                           '<div class="typeProd idbtn">'+ table[substridTile][7] +'</div>'+ /*Lens Width*/
                          '</div>'+
                      '</div>'+
 
@@ -335,7 +379,7 @@ $(function() {
                          '<div class="lblAdicity"><strong>Lens Aperture</strong></div>'+
                        '</div>'+
                        '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                         '<div class="acidProd idbtn">'+ varCard[8] +'</div>'+ /*Lens Aperture*/
+                         '<div class="acidProd idbtn">'+ table[substridTile][8] +'</div>'+ /*Lens Aperture*/
                        '</div>'+
                      '</div>'+
                      '<div class="row par">'+
@@ -343,7 +387,7 @@ $(function() {
                          '<div class="lblCafType"><strong>Shooting Modes</strong></div>'+
                        '</div>'+
                      '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                       '<div class="cafeProd idbtn">'+ varCard[9] +'</div>'+ /*Shooting Modes*/
+                       '<div class="cafeProd idbtn">'+ table[substridTile][9] +'</div>'+ /*Shooting Modes*/
                      '</div>'+
                    '</div>'+
                    '<div class="row impar">'+
@@ -351,7 +395,7 @@ $(function() {
                        '<div class="lblWork"><strong>Flash</strong></div>'+
                      '</div>'+
                      '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                       '<div class="workProd idbtn">'+ varCard[10] +'</div>'+ /* Flash*/
+                       '<div class="workProd idbtn">'+ table[substridTile][10] +'</div>'+ /* Flash*/
                      '</div>'+
                    '</div>'+
                    '<div class="row par">'+
@@ -359,7 +403,7 @@ $(function() {
                        '<div class="lblWork"><strong>Develop Time</strong></div>'+
                      '</div>'+
                      '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                       '<div class="workProd idbtn">'+ varCard[11] +'</div>'+ /* Develop Time*/
+                       '<div class="workProd idbtn">'+ table[substridTile][11] +'</div>'+ /* Develop Time*/
                      '</div>'+
                    '</div>'+
                    '<div class="row impar">'+
@@ -367,100 +411,49 @@ $(function() {
                        '<div class="lblWork"><strong>Price</strong></div>'+
                      '</div>'+
                      '<div class="col-md-6 col-sm-6 col-xs-6">'+
-                       '<a class="workProd idbtn" href="'+varCard[12]+'">price</a>'+ /*Price*/
+                       '<a class="workProd idbtn" href="'+table[substridTile][12]+'">price</a>'+ /*Price*/
                      '</div>'+
                    '</div>'+
-                       '</div>'+ //mdl-card__supporting-text
-                    '</div>'+ //modal-card
-                 '</div>'; //modalmargin
+                  '</div>'+ //mdl-card__supporting-text
+                '</div>'+ //modal-card
+              '</div>'; //modalmargin
         $('#containerModal').append(generatedDiv);
 
-        var idModalItem = "modalItem" + idTile;
-        var batteries = varCard[4];
-        var batteryLife = varCard[5];
-        var shutterSpeed = varCard[6];
-        var lensWidth = varCard[7];
-        var lensAperture = varCard[8];
-        var shootingMode = varCard[9];
-        var flash = varCard[10];
-        var developTime = varCard[11];
-        //compa function
-        compafunction(idModalItem,batteries,batteryLife,shutterSpeed,lensWidth,lensAperture,shootingMode,flash,developTime);
-  };
+
+      };
+    }
    //generate modal
   /////////////////
 
-  function compafunction(idModalItem,batteries,batteryLife,shutterSpeed,lensWidth,lensAperture,shootingMode,flash,developTime){
-    console.log(idModalItem,batteries,batteryLife,shutterSpeed,lensWidth,lensAperture,shootingMode,flash,developTime);
-  };
-
- /////////////////
-//Search section
-  $('#searchInput').keypress((e)=>{
-    var keycode = (e.keyCode ? e.keyCode : e.which);
-    if(keycode== 13){
-      var str = $("#searchInput").val();
-      var divFound = $(".rowModal").find(".idbtn:icontains("+ str +")");
-      var divNotFound = $(".rowModal").find(".idbtn:not(:icontains("+ str +"))");
-      $(divNotFound).parents(".rowModal").hide(300);
-      $(divFound).parents(".rowModal").show(300);
-    }
-  });
+  /////////////////
  //Search section
-/////////////////
+   $('#searchInput').keypress((e)=>{
+     if ($('body.camera-page').length > 0)  {
+       var keycode = (e.keyCode ? e.keyCode : e.which);
+       if(keycode== 13){
+         var str = $("#searchInput").val();
+         var divFound = $(".rowModal").find(".idbtn:icontains("+ str +")");
+         var divNotFound = $(".rowModal").find(".idbtn:not(:icontains("+ str +"))");
+         $(divNotFound).parents(".rowModal").hide(300);
+         $(divFound).parents(".rowModal").show(300);
+       }
+     }
+   });
+  //Search section
+ /////////////////
 
- /////////////////////////
-//new contains function
-jQuery.expr[':'].icontains = function(a, i, m) {
-  return jQuery(a).text().toUpperCase()
-      .indexOf(m[3].toUpperCase()) >= 0;
-};
+  /////////////////////////
  //new contains function
-/////////////////////////
-
- /////////////////////
-//card-title hover
-/*$('.imgAmazon').hover(()=>{
-  console.log("asd");
-  $(this).toggleClass('imgAmazon_hover');
-});*/
-
- //card-title hover
-/////////////////////
-
- /////////
-//handle on click btn compare, btn Buy
-  //compare
-  $('.btnToCompa').bind('mousedown', (event)=>{
-    var str ='#'+ $(event.target.id)['selector'];
-    if ($(str).hasClass('botonToggle')) {
-      $(str).attr('src','img/btnCompare2gris.png');
-    }else{
-      $(str).attr('src','img/btnCompare2.png');
-    }
-  }).on('mouseup', (event)=>{
-    var str ='#'+ $(event.target.id)['selector'];
-    $(str).toggleClass('botonToggle');
-    if ($(str).hasClass('botonToggle')) {
-      $(str).attr('src','img/btnComparegris.png');
-    }else{
-      $(str).attr('src','img/btnCompare.png');
-    }
-  });
-
-  //AMAZON
-  $('.btnToAmazon').bind('mousedown', (event)=>{
-    var str ='#'+ $(event.target.id)['selector'];
-    $(str).attr('src','img/btnbuyNow2.png');
-  }).on('mouseup', (event)=>{
-    var str ='#'+ $(event.target.id)['selector'];
-    $(str).attr('src','img/btnBuyNow.png');
-  });
-  //handle on click btn compare, btn Buy
- /////////
+ jQuery.expr[':'].icontains = function(a, i, m) {
+   return jQuery(a).text().toUpperCase()
+       .indexOf(m[3].toUpperCase()) >= 0;
+ };
+  //new contains function
+ /////////////////////////
 
   ///////////////
  //filter section
+
 $('#srchBat').on('change', ()=>{
     var batteryStr =  $('#srchBat :selected').val();
     var devTimeStr = $('#developTimeInput').text();
@@ -577,6 +570,104 @@ function filterDivs(batteryStr, devTimeStr, filmTypeStr){
   //filter section
  ///////////////
 
+ /////////
+ //handle on click btn compare, btn Buy
+   //compare
+   $('.imgCompare').bind('mousedown', (event)=>{
+     var btn ='#'+ $(event.target.id)['selector'];
+     $(btn).removeClass('button-1');
+     $(btn).addClass('pressedOut');
+
+   }).on('mouseup', (event)=>{
+     var container = $(event.target).closest('.rowModal').attr('id');
+     var btn ='#'+ $(event.target.id)['selector'];
+     $(btn).removeClass('pressedOut');
+     $(btn).addClass('button-1');
+     $(btn).toggleClass('botonToggle');
+     if ($(btn).hasClass('botonToggle')) {
+       $(btn).text("DESELECT");
+     }else {
+       $(btn).text("COMPARE");
+     }
+     handleiModal(container,btn);
+   });
+
+   //AMAZON
+   $('.btnToAmazon').bind('mousedown', (event)=>{
+     var btn ='#'+ $(event.target.id)['selector'];
+     $(btn).removeClass('button-2');
+     $(btn).addClass('pressedOut-2');
+   }).on('mouseup', (event)=>{
+     var btn ='#'+ $(event.target.id)['selector'];
+     $(btn).removeClass('pressedOut-2');
+     $(btn).addClass('button-2');
+   });
+  //handle on click btn compare, btn Buy
+ /////////
+
+  ///////////////
+ //handle glyphicon-remove
+ $(document).on('click','.glyphicon-remove',(event)=>{
+   var target = $(event.target).closest('.imodalItem');
+   //delete from iModal
+   target.remove();
+
+   //change button css
+   var btnToChange = $(target).attr('id').substring(9);
+   var btn ='#btnCompare' + btnToChange;
+   $(btn).toggleClass('botonToggle');
+   if ($(btn).hasClass('botonToggle')) {
+     $(btn).text("DESELECT");
+   }else {
+     $(btn).text("COMPARE");
+   }
+
+   //hide iModal
+   if ($(btn).hasClass('botonToggle')) {
+     contiModalItem += 1;
+   }else{
+     contiModalItem -= 1;
+   }
+   if (contiModalItem > 0) {
+     $('#selectedItemsModal').removeClass('hidden');
+     $('#selectedItemsModal').addClass('visible');
+   }
+   if(contiModalItem == 0) {
+     $('#selectedItemsModal').removeClass('visible');
+     $('#selectedItemsModal').addClass('hidden');
+   }
+ });
+  //handle glyphicon-remove
+ ///////////////
+
+ ////////////
+ //handle imgCompareHere
+   $('#imgCompareHere').click(()=>{
+     addtoCompareModal();
+   });
+ //handle compare btn
+ ////////////
+
+ //slide show
+ var view = $("#listItems");
+ var move = "100px";
+ var sliderLimit = -750
+
+ $("#rightArrow").click(function(){
+
+     var currentPosition = parseInt(view.css("left"));
+     if (currentPosition >= sliderLimit){
+       view.stop(false,true).animate({left:"-="+move},{ duration: 400});
+     }
+
+ });
+
+ $("#leftArrow").click(function(){
+
+     var currentPosition = parseInt(view.css("left"));
+     if (currentPosition < 0) view.stop(false,true).animate({left:"+="+move},{ duration: 400})
+
+ });
 
 
 

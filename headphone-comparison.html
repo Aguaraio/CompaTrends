@@ -26,7 +26,7 @@
 
    <!--custom css-->
    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/stylecafe.css">
+    <link rel="stylesheet" type="text/css" href="css/styleheadphone.css">
     <link rel="stylesheet" type="text/css" href="css/btnStyle.css">
     <link rel="stylesheet" type="text/css" href="css/modalStyle.css">
 
@@ -60,7 +60,7 @@
    <!-- End Facebook Pixel Code -->
 </head>
 
-<body class="coffee-page">
+<body class="headphone-page">
   <div class="row" id="header">
     <div id="opacityHeader">
       <div class="row" id="rowHeader">
@@ -110,22 +110,56 @@
     <div class="mdl-grid">
       <div class="col-md-2 col-sm-2 col-xs-2" id="leftBar">
         <div class="filterOpt">
-          <h5 class="filterTitle">Flavor</h5>
-          <select class="form-control srch" id="srchFlavor">
-            <option>All</option>
-            <option>Cinnamon</option>
-            <option>cherry and chocolate</option>
-            <option>Pure</option>
-          </select>
-
           <h5 class="filterTitle">Type</h5>
           <select class="form-control srch" id="srchType">
-            <option>All</option>
-            <option>Arabica</option>
-            <option>Robusta</option>
-            <option>Mixed</option>
+            <option >All</option>
+            <option >Over-ear</option>
+            <option >On-Ear</option>
+            <option >In-Ear</option>
           </select>
 
+          <h5 class="filterTitle">Connection</h5>
+          <tr>
+            <label for="Wired" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">
+              <input type="checkbox" id="Wired" value="Wired" class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Wired</span>
+            </label>
+            <label for="Bluetooth" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">
+              <input type="checkbox" id="Bluetooth" value="Bluetooth"  class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Bluetooth</span>
+            </label>
+            <label for="Bluetooth-NFC" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">
+              <input type="checkbox" id="Bluetooth-NFC" value="Bluetooth-NFC"  class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Bluetooth-NFC</span>
+            </label>
+            <label for="Wireless-RF" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">
+              <input type="checkbox" id="Wireless-RF" value="Wireless-RF"  class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Wireless-RF</span>
+            </label>
+            <label for="Wired-Bluetooth" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">
+              <input type="checkbox" id="Wired-Bluetooth" value="Wired-Bluetooth"  class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Wired-Bluetooth</span>
+            </label>
+          </tr>
+          <h5 class="filterTitle">Category</h5>
+          <tr>
+            <label for="Enthusiast" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxCat">
+              <input type="checkbox" id="Enthusiast" value="Enthusiast" class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Enthusiast</span>
+            </label>
+            <label for="Normal" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxCat">
+              <input type="checkbox" id="Normal" value="Normal"  class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Normal</span>
+            </label>
+            <label for="Sport" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxCat">
+              <input type="checkbox" id="Sport" value="Sport"  class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Sport</span>
+            </label>
+            <label for="Audiophile" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxCat">
+              <input type="checkbox" id="Audiophile" value="Audiophile"  class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Audiophile</span>
+            </label>
+          </tr>
         </div>
       </div>
       <div class="col-md-10 col-sm-10 col-xs-10" id="rightGrid">
@@ -162,7 +196,7 @@
    <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
 
-   <script type="text/javascript" src="js/compacafe.js"></script>
+   <script type="text/javascript" src="js/compaheadphone.js"></script>
 
 
 

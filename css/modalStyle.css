@@ -1,14 +1,100 @@
+/*
+  iModal
+*/
 .iModal{
   background-color: rgba(0,0,0,0.5);
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 170px;
   z-index: 999;
+  margin-left: 0px;
 }
 .visible{
   visibility: visible;
 }
 .hidden{
   visibility: hidden;
+}
+#listItems{
+  position:absolute;
+  left:0;
+  width: 99999px;
+}
+.imodalItem{
+  background-color: #fff;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline-block;
+  float: left;
+}
+.mdl-cardiModal{
+  width: 10rem;
+  height: 10rem;
+}
+#leftArrow {
+width:40px;
+height:100%;
+position:absolute;
+left:0px;
+}
+#leftArrow:hover{
+  background-color: rgba(178,178,178,0.5);
+}
+#rightArrow {
+width:40px;
+height:100%;
+position:absolute;
+left: 78rem;
+}
+#rightArrow:hover{
+  background-color: rgba(178,178,178,0.5);
+}
+#listItemsContainer {
+width:80%;
+height:100%;
+overflow:hidden;
+}
+.arrows{
+  margin-top: 40px;
+  zoom: 2;
+}
+.btnClose{
+  position: absolute;
+  top: 0;
+  margin-top: 2px;
+  margin-left: 130px;
+}
+.glyphicon-remove{
+  cursor: pointer;
+  zoom: 2;
+  background-color: rgba(178,178,178,0.5);
+  color: rgba(35,31,32,0.5);
+  border-radius: 50%;
+}
+.glyphicon-remove:hover{
+  background-color: rgba(178,178,178,1);
+  color: rgba(35,31,32,1);
+}
+
+
+/*
+  CompareModal
+*/
+
+#containerContainerModal{
+  margin-top: 19vh;
+  width: 100vw;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: rgba(111,121,126,0.3);
+}
+#containerModal{
+   width: 9999px;
+}
+.modalmargin{
+  width: 270px;
+  float: left;
+  margin-left: 30px;
 }

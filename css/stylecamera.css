@@ -1,32 +1,38 @@
-#header, #titleHeaderMid {
-    background-position: center;
-}
-#compareBtnDiv, #rowHeader, #titleHeader {
-    height: 100%}
-.checkDiv, .mdl-card__actions {
-    position: absolute;
-}
-.mdl-cel, .rowModal {
-    margin-top: 50px;
-}
+/*
+  HEADER
+  */
 #header {
-    height: 11rem;
-    background-color: #231f20;
-    border-bottom: 3px solid #000;
+  position: fixed;
+  top: 0;
+  height: 11rem;
+  background-color: #231f20;
+  border-bottom: 3px solid #000;
+  z-index: 999;
 }
 #opacityHeader {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
 }
-#titleHeaderTop {
-    height: 10%}
+#rowHeader,#titleHeader{
+  height: 100%
+}
+#rowHeader{
+  margin-left: 1px;
+}
+#logoCompa{
+  position: relative;
+  width: 45%;
+  height: 100%;
+}
 #titleHeaderMid {
-    height: 100%;
-    width: 110%;
-    background-image: url(../img/logoWhite.png);
+  /*  background-image: url(../img/logoWhite.png);
     background-position: left;
     background-size:contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+}
+#titleHeaderTop {
+    height: 10%
 }
 #searchDiv {
     margin-top: 3rem;
@@ -35,11 +41,46 @@
 }
 .mdl-textfield {
     margin-left: 5rem;
-    width: 80%}
+    width: 80%
+}
+#categoryHeader{
+  height:100%;
+}
+#categoryBtn{
+  margin-top: 3.5rem;
+  margin-left: 10px;
+  width: 60%;
+  height: 40%;
+  text-align: center;
+}
+.dropdown{
+  padding-top: 10px;
+}
+.dropdown .categoryContent{
+  color:  #E5E5E5;
+  font-size: 1.5rem;
+}
+.categoryContent{
+  background-color: rgba(0,0,0,0);
+}
+
+
+/*
+  content
+*/
+#compareBtnDiv {
+    height: 100%}
+.checkDiv, .mdl-card__actions {
+    position: absolute;
+}
+.mdl-cel, .rowModal {
+    margin-top: 50px;
+}
+
 #compareDiv {
     height: 17rem;
 }
-}.checkDiv {
+.checkDiv {
     top: 1rem;
     right: 2rem;
     border: 1px solid #fff;
@@ -53,7 +94,7 @@
     height: 20rem;
 }
 .demo-card-square.mdl-card.modal-card{
-  height: 35rem;
+  height: 40rem;
 }
 .demo-card-square>.card-title {
     color: #fff;
@@ -61,9 +102,7 @@
 }
 .mdl-card__supporting-text {
     width: 100%}
-.mdl-grid {
-    margin-top: 15px;
-}
+
 .mdl-cel {
     /*margin-left: 25px;
     margin-right: 15px;*/
@@ -120,13 +159,9 @@ h6{
   bottom: 10rem;
 }
 
-
-#btnCompare {
-  margin-top: 3.5rem;
-}
 #imgCompareHere{
-  height: 100%;
-  width: 100%;
+  /*height: 100%;
+  width: 100%;*/
 }
 
 /*hover div*/
@@ -146,18 +181,9 @@ h6{
   margin-left: 5%;
 }
 .btnDiv{
-  width: 20rem;
   margin-top: 10px;
   margin-left: 0px;
   margin-right: 0px;
-}
-.btnToCompa, .btnToAmazon{
-  padding-left: 0px;
-  padding-right: 0px;
-}
-.imgCompare, .imgBuyNow{
-  width: 100%;
-  height: 100%;
 }
 .divHidden{
   visibility: hidden;
@@ -166,7 +192,16 @@ h6{
   position: absolute;
   display: none;
 }
+/*
+  filter
+*/
+.mdl-grid {
+    margin-top: 11rem;
+    padding: 0px;
+}
 #leftBar{
+  position: fixed;
+  left: 0;
   background-color: #40bca3;
   height: 170rem;
 }
@@ -177,25 +212,11 @@ h6{
 .filterTitle{
   color: #fff;
 }
-.botonToggle{
-  content: url('../img/btnComparegris.png');
-}
 .modalmargin{
   width: 270px;
   float: left;
   margin-left: 30px;
 }
-#containerContainerModal{
-  margin-top: 19vh;
-  width: 100vw;
-  overflow-x: auto;
-  white-space: nowrap;
-  background-color: rgba(111,121,126,0.3);
-}
-#containerModal{
-   width: 99999999999px;
-}
-#divLeftArrow, #divRightArrow {
-  background-color: #eaffff;
-  height: 100%;
+#rightGrid{
+  margin-left: 16.8rem;
 }

@@ -1,15 +1,6 @@
 /*
   BUTTONS : COMPARE - BUY NOW
 */
-.btnToCompa, .btnToAmazon{
-  padding-left: 5px;
-  padding-right: 5px;
-
-}
-.imgCompare, .imgBuyNow{
-  width: 100%;
-  height: 100%;
-}
 .btn {
   text-decoration: none;
   color: #231f20;
@@ -24,17 +15,20 @@
   height: 100%;
   z-index: -1;
 }
-.button-1, .button-2{
+.button-1, .button-2, .pressedOut-1, .pressedOut-2, .botonToggle{
   border-radius: 100em;
 }
-.pressedOut{
-  border-radius: 100em;
-}
-.pressedOut:before{
+.pressedOut-1:before{
   border-radius: 100em;
   left: 0px;
   top: 0px;
   background-color: #f25449;
+}
+.pressedOut-2:before{
+  border-radius: 100em;
+  left: 0px;
+  top: 0px;
+  background-color: #f5e32f;
 }
 .button-1:before {
   border-radius: 100em;
@@ -48,23 +42,24 @@
   top: 2px;
   background-color: #f5e32f;
 }
-.botonToggle{
-  border-radius: 100em;
-}
 .botonToggle:before{
   border-radius: 100em;
   left: 3px;
   top: 2px;
   background-color: #B2B2B2;
 }
+.imgCompare{
+  width: 100%;
+  height: 100%;
+}
 
 
 /*
   BUTTONS: COMPARE HERE
 */
-#btnCompare {
-  margin-top: 4rem;
-  margin-right: 2rem;
+#btnCompare{
+  margin-top: 5rem;
+  margin-right: 1rem;
 }
 .btnOpenModal {
   cursor: pointer;
@@ -75,7 +70,7 @@
   text-align: center;
   padding-top: 12px;
   padding-bottom: 12px;
-  font-size: 2.1rem;
+  font-size: 1.5rem;
 }
 .btnOpenModal:before {
   position: absolute;

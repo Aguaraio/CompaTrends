@@ -57,14 +57,19 @@
 
 <body class="home-page">
   <div class="row" id="header">
-    <div id="opacityHeader" class="container">
+    <div id="opacityHeader">
       <div class="row" id="rowHeader">
-        <div class="col-md-3 col-sm-3 col-xs-3"></div>
-        <div class="col-md-6 col-sm-6 col-xs-6" id="titleHeader">
-          <!--<div id="titleHeaderTop"></div>-->
-          <h1 id="titleHeaderMid" src="./img/compalogo2.png" alt="Compa-trends Compare coffee, instant cameras and more!"></h1>
+        <div class="col-md-3 col-sm-3 col-xs-3" id="titleHeader">
+
+
+            <a href="http://www.compatrends.com">
+            <img id="logoCompa" src="img/logoWhite.png"/>
+            </a>
+
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
           <div id="titleHeaderBot">
-            <!--Search section
+            <!--Search section-->
             <div id="searchDiv">
               <div class="filter-container">
                 <div class="mdl-textfield mdl-js-textfield">
@@ -73,15 +78,32 @@
                 </div>
               </div>
             </div>
-            Search section-->
+            <!--Search section-->
           </div>
         </div>
-        <div class="col-md-3 col-sm-3 col-xs-3"></div>
+        <div class="col-md-3 col-sm-3 col-xs-3" id="categoryHeader">
+          <div id="categoryBtn">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle categoryContent" type="button" data-toggle="dropdown">Categories
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.compatrends.com/coffee-comparison.html">Coffee</a></li>
+                  <li><a href="http://www.compatrends.com/instant-camera-comparison.html">Instan Cameras</a></li>
+                  <li><a href="http://www.compatrends.com/headphone-comparison.html">Headphones</a></li>
+                </ul>
+              </div>
+          </div>
+          <!--<div id="categoryContainer">
+            <a class="categoryLink" href="http://www.compatrends.com/coffee-comparison.html" target="_blank">coffee</a>
+            <a class="categoryLink" href="http://www.compatrends.com/instant-camera-comparison.html" target="_blank">camera</a>
+            <a class="categoryLink" href="" target="_blank">turntable</a>
+            <a class="categoryLink" href="" target="_blank">coffee machine</a>
+          </div>-->
+        </div>
       </div>
     </div>
 
   </div>
-
     <!--Grid section-->
     <div class="mdl-grid" id="gridContainer">
 
@@ -96,7 +118,7 @@
    <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
 
-
+   <script type="text/javascript" src="js/compaheadphone.js"></script>
    <script type="text/javascript" src="js/compacamera.js"></script>
    <script type="text/javascript" src="js/compacafe.js"></script>
    <script type="text/javascript" src="js/compa.js"></script>
