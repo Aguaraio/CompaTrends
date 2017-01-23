@@ -77,7 +77,14 @@ overflow:hidden;
   background-color: rgba(178,178,178,1);
   color: rgba(35,31,32,1);
 }
-
+.iModalImg a img{
+  width: 100%;
+  height: 100%;
+}
+.mdl-cardiModal .iModalImg{
+  width: 100%;
+  height: 100%;
+}
 
 /*
   CompareModal
