@@ -26,6 +26,9 @@
    <!--custom css-->
    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/btnstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/modalStyle.css">
+
 
     <!-- GOOGLE ANALYTICS-->
     <script>
@@ -87,29 +90,47 @@
               <button class="btn dropdown-toggle categoryContent" type="button" data-toggle="dropdown">Categories
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a href="http://www.compatrends.com/coffee-comparison.html">Coffee</a></li>
-                  <li><a href="http://www.compatrends.com/instant-camera-comparison.html">Instant Cameras</a></li>
-                  <li><a href="http://www.compatrends.com/headphone-comparison.html">Headphones</a></li>
+                  <li><a class="categoryOpt">Coffee</a></li>
+                  <li><a class="categoryOpt">Instant Cameras</a></li>
+                  <li><a class="categoryOpt">Headphones</a></li>
+                  <li><a class="categoryOpt">Coffee Machines</a></li>
                 </ul>
               </div>
           </div>
-          <!--<div id="categoryContainer">
-            <a class="categoryLink" href="http://www.compatrends.com/coffee-comparison.html" target="_blank">coffee</a>
-            <a class="categoryLink" href="http://www.compatrends.com/instant-camera-comparison.html" target="_blank">camera</a>
-            <a class="categoryLink" href="" target="_blank">turntable</a>
-            <a class="categoryLink" href="" target="_blank">coffee machine</a>
-          </div>-->
         </div>
       </div>
     </div>
 
   </div>
+
+  <div class="mdl-grid" id="bodyContainer">
     <!--Grid section-->
-    <div class="mdl-grid" id="gridContainer">
+    <div id="gridContainer">
 
     </div>
     <!--Grid section-->
+  </div>
 
+  <!--the group of selected items modal-->
+  <div class="row iModal hidden" id="selectedItemsModal">
+
+      <div class="col-md-10 col-sm-10 col-xs-10" id="listItemsContainer"><div id="listItems"></div></div>
+      <div id="leftArrow"><span class="glyphicon glyphicon-chevron-left arrows"></span></div>
+        <div id="rightArrow"><span class="glyphicon glyphicon-chevron-right arrows"></span></div>
+
+    <div class="col-md-2 col-sm-2 col-xs-2" id="btnCompare">
+        <a id="imgCompareHere" class="btnOpenModal button-3" data-toggle="modal" data-target="#flipFlop"><span>COMPARE HERE</span></a>
+    </div>
+
+  </div>
+
+  <!--the comparison modal-->
+  <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="container"  id="containerContainerModal">
+        <div id="containerModal">
+        </div>
+    </div>
+  </div>
 
   <!-- jQuery Version 1.11.1 -->
    <script src="js/jquery.js"></script>
@@ -117,10 +138,8 @@
 
    <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="js/db.js"></script>
 
-   <script type="text/javascript" src="js/compaheadphone.js"></script>
-   <script type="text/javascript" src="js/compacamera.js"></script>
-   <script type="text/javascript" src="js/compacafe.js"></script>
    <script type="text/javascript" src="js/compa.js"></script>
 
 

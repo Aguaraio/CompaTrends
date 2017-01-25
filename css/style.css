@@ -65,22 +65,36 @@
 }
 
 
-
-
-
 /*
   CONTENT
-  */
+*/
+#compareBtnDiv {
+    height: 100%}
+.checkDiv, .mdl-card__actions {
+    position: absolute;
+}
 .mdl-cel, .rowModal {
     margin-top: 50px;
 }
 
+#compareDiv {
+    height: 17rem;
+}
+.checkDiv {
+    top: 1rem;
+    right: 2rem;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+.checkDivOn {
+    background-color: red;
+}
 .demo-card-square.mdl-card {
     width: 20rem;
     height: 20rem;
 }
 .demo-card-square.mdl-card.modal-card{
-  height: 35rem;
+  height: 40rem;
 }
 .demo-card-square>.card-title {
     color: #fff;
@@ -88,13 +102,6 @@
 }
 .mdl-card__supporting-text {
     width: 100%}
-.mdl-grid {
-    margin-top: 8rem;
-}
-.mdl-cel {
-    /*margin-left: 25px;
-    margin-right: 15px;*/
-}
 .mdl-button {
     opacity: .8;
 }
@@ -147,7 +154,6 @@ h6{
   bottom: 10rem;
 }
 
-
 /*hover div*/
 .hoverDiv{
   position: absolute;
@@ -156,22 +162,18 @@ h6{
   height: 100%;
   width: 100%;
   display: none;
-  top: 0px;
 }
 .mdl-card:hover .hoverDiv {
   display: block;
-}
-.mdl-card:hover .hoverthisDiv{
-  display: none;
 }
 .specDiv{
   margin-top: 30%;
   margin-left: 5%;
 }
-
-.imgCompare, .imgBuyNow{
-  width: 100%;
-  height: 100%;
+.btnDiv{
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .divHidden{
   visibility: hidden;
@@ -180,29 +182,34 @@ h6{
   position: absolute;
   display: none;
 }
-
-.modalmargin{
-  width: 270px;
-  float: left;
-  margin-left: 30px;
-}
-#containerContainerModal{
-  margin-top: 19vh;
-  width: 100vw;
-  overflow-x: auto;
-  white-space: nowrap;
-  background-color: rgba(111,121,126,0.3);
-}
-#containerModal{
-   width: 99999999999px;
-}
-#divLeftArrow, #divRightArrow {
-  background-color: #eaffff;
-  height: 100%;
-}
 .hoverthisDiv{
   text-align: center;
   width: 50%;
   height: 10%;
   background-color: #E3E7EA;
+}
+
+/*
+  filter
+*/
+.mdl-grid {
+    margin-top: 11rem;
+    padding: 0px;
+}
+#leftBar{
+  position: fixed;
+  left: 0;
+  background-color: #40bca3;
+  height: 170rem;
+}
+.filterOpt{
+  padding-left: 20px;
+  padding-right: 5px;
+}
+.filterTitle{
+  color: #fff;
+}
+#gridContainer{
+  position: absolute;
+  right: 0;
 }
