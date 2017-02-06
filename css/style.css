@@ -129,8 +129,8 @@
 
 }
 .imgAmazon a img {
-  width: 100%;
   height: 100%;
+  width: auto;
 }
 .rowWinner {
     background-color: #4CA64C;
