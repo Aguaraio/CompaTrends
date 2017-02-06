@@ -31,14 +31,6 @@ $(function() {
    }
  });
 
-//category selection
- $('.categoryOpt').on('mouseup',(event)=>{
-   var optStr = $(event.target).text().toLowerCase().replace(/ /g,'');
-   $('.'+ optStr).show(300);
-   $('.rowModal:not(.'+ optStr +')').hide(300);
-   showFilter(optStr);
- });
-
 //btncompare change css and add/delete item to/from imodal
  $('.imgCompare').bind('mousedown', (event)=>{
    var btn ='#'+ $(event.target.id)['selector'];
@@ -63,7 +55,7 @@ $(function() {
 
    $('.'+ classTarget).show(300);
    $('.rowModal:not(.'+ classTarget +')').hide(300);
-   showFilter(classTarget);
+   //showFilter(classTarget);
    handleiModal(imgContainer,btn,idTarget);
  });
 
@@ -136,6 +128,10 @@ $(function() {
     $('#flipFlop').modal('hide');
   });
 
+  //click on hover div to go amazon
+  $(document).on('click','.hoverDiv',(event)=>{
+    $(event.target).closest('.rowModal').find('.card-title .imgAmazon a img').click();
+  })
  ///////////////////HANDLERS///////////////////////////
 //////////////////////////////////////////////////////
 
@@ -146,136 +142,6 @@ $(function() {
   jQuery.expr[':'].icontains = function(a, i, m) {
     return jQuery(a).text().toUpperCase()
       .indexOf(m[3].toUpperCase()) >= 0;
-  };
-
-
-//add filter
-  function showFilter(optStr){
-    $('#gridContainer').addClass('col-md-10 col-sm-10 col-xs-10');
-    $('#leftBar').remove();
-    var htmlFilter ='';
-    if (optStr == 'coffee') {
-      htmlFilter =    '<div class="col-md-2 col-sm-2 col-xs-2" id="leftBar">'+
-                        '<div class="filterOpt">'+
-                          '<h5 class="filterTitle">Flavor</h5>'+
-                          '<select class="form-control srch" id="srchFlavor">'+
-                            '<option>All</option>'+
-                            '<option>Cinnamon</option>'+
-                            '<option>cherry and chocolate</option>'+
-                            '<option>Pure</option>'+
-                          '</select>'+
-                          '<h5 class="filterTitle">Type</h5>'+
-                          '<select class="form-control srch" id="srchType">'+
-                            '<option>All</option>'+
-                            '<option>Arabica</option>'+
-                            '<option>Robusta</option>'+
-                            '<option>Mixed</option>'+
-                          '</select>'+
-                        '</div>'+
-                      '</div>';
-    }else if (optStr == 'instantcameras'){
-      htmlFilter = '<div class="col-md-2 col-sm-2 col-xs-2" id="leftBar">'+
-        '<div class="filterOpt">'+
-          '<h5 class="filterTitle">Battery Life</h5>'+
-          '<select class="form-control srch" id="srchBat">'+
-            '<option >All</option>'+
-            '<option >50 shots</option>'+
-            '<option >100 shots</option>'+
-            '<option >300 shots</option>'+
-            '<option >400 shots</option>'+
-          '</select>'+
-
-          '<h5 class="filterTitle">Develop Time</h5>'+
-          '<div class="container" id="developTimeInput">30 min</div>'+
-          '<input class="mdl-slider mdl-js-slider" id="developTimeSlider" type="range" min="0" max="30" value="30" step="5" tabindex="0"/>'+
-
-          '<table>'+
-            '<h5 class="filterTitle">Film Type</h5>'+
-            '<tr>'+
-              '<label for="InstaxMini" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">'+
-                '<input type="checkbox" id="InstaxMini" value="InstaxMini" class="mdl-checkbox__input">'+
-                '<span class="mdl-checkbox__label">Instax Mini</span>'+
-              '</label>'+
-              '<label for="InstaxWide" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">'+
-                '<input type="checkbox" id="InstaxWide" value="InstaxWide"  class="mdl-checkbox__input">'+
-                '<span class="mdl-checkbox__label">Instax Wide</span>'+
-              '</label>'+
-              '<label for="Impossible600" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">'+
-                '<input type="checkbox" id="Impossible600" value="Impossible600"  class="mdl-checkbox__input">'+
-                '<span class="mdl-checkbox__label">Imposible 600</span>'+
-              '</label>'+
-              '<label for="Zink" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">'+
-                '<input type="checkbox" id="Zink" value="Zink"  class="mdl-checkbox__input">'+
-                '<span class="mdl-checkbox__label">Zink</span>'+
-              '</label>'+
-            '</tr>'+
-          '</table>'+
-        '</div>'+
-      '</div>';
-    }else if (optStr == 'headphones') {
-      htmlFilter = '<div class="col-md-2 col-sm-2 col-xs-2" id="leftBar">'+
-        '<div class="filterOpt">'+
-          '<h5 class="filterTitle">Type</h5>'+
-          '<select class="form-control srch" id="srchType">'+
-            '<option >All</option>'+
-            '<option >Over-ear</option>'+
-            '<option >On-Ear</option>'+
-            '<option >In-Ear</option>'+
-          '</select>'+
-
-          '<h5 class="filterTitle">Connection</h5>'+
-          '<tr>'+
-            '<label for="Wired" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">'+
-              '<input type="checkbox" id="Wired" value="Wired" class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Wired</span>'+
-            '</label>'+
-            '<label for="Bluetooth" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">'+
-              '<input type="checkbox" id="Bluetooth" value="Bluetooth"  class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Bluetooth</span>'+
-            '</label>'+
-            '<label for="Bluetooth-NFC" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">'+
-              '<input type="checkbox" id="Bluetooth-NFC" value="Bluetooth-NFC"  class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Bluetooth-NFC</span>'+
-            '</label>'+
-            '<label for="Wireless-RF" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">'+
-              '<input type="checkbox" id="Wireless-RF" value="Wireless-RF"  class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Wireless-RF</span>'+
-            '</label>'+
-            '<label for="Wired-Bluetooth" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxConn">'+
-              '<input type="checkbox" id="Wired-Bluetooth" value="Wired-Bluetooth"  class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Wired-Bluetooth</span>'+
-            '</label>'+
-          '</tr>'+
-          '<h5 class="filterTitle">Category</h5>'+
-          '<tr>'+
-            '<label for="Enthusiast" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxCat">'+
-              '<input type="checkbox" id="Enthusiast" value="Enthusiast" class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Enthusiast</span>'+
-            '</label>'+
-            '<label for="Normal" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxCat">'+
-              '<input type="checkbox" id="Normal" value="Normal"  class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Normal</span>'+
-            '</label>'+
-            '<label for="Sport" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxCat">'+
-              '<input type="checkbox" id="Sport" value="Sport"  class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Sport</span>'+
-            '</label>'+
-            '<label for="Audiophile" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkboxCat">'+
-              '<input type="checkbox" id="Audiophile" value="Audiophile"  class="mdl-checkbox__input">'+
-              '<span class="mdl-checkbox__label">Audiophile</span>'+
-            '</label>'+
-          '</tr>'+
-        '</div>'+
-      '</div>';
-    }else if (optStr == "coffeemachines") {
-      htmlFilter = '<div class="col-md-2 col-sm-2 col-xs-2" id="leftBar">'+
-        '<div class="filterOpt">'+
-
-        '</div>'+
-      '</div>';
-    }
-    $('#bodyContainer').prepend(htmlFilter);
-    $('#leftBar').hide().show(300);
   };
 
 //add item to iModal
@@ -340,7 +206,7 @@ function addtoCompareModal(){
 
 };
 
-//
+//add items from imodal to Modal compare
 function generateCompareModal(idTiles){
   //delete all the cards from containerModal
   $('#containerModal').children().remove();

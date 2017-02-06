@@ -126,11 +126,11 @@
 }
 .imgAmazon {
     text-align: center;
+
 }
 .imgAmazon a img {
-    height: 100%;
-    width: auto;
-
+  width: 100%;
+  height: 100%;
 }
 .rowWinner {
     background-color: #4CA64C;
@@ -161,14 +161,30 @@ h6{
   color: #fff;
   height: 100%;
   width: 100%;
-  display: none;
+  /*display: none;*/
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
 }
 .mdl-card:hover .hoverDiv {
-  display: block;
+  /*display: block;*/
+  visibility: visible;
+  opacity: 1;
 }
 .specDiv{
-  margin-top: 30%;
+align-items: center;
+margin-top: 10%;
+}
+.rowHover{
+margin-left: 5%;
+margin-top: 3%;
+}
+.specHover{
   margin-left: 5%;
+}
+.titleHover{
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
 }
 .btnDiv{
   margin-top: 10px;
@@ -187,6 +203,10 @@ h6{
   width: 50%;
   height: 10%;
   background-color: #E3E7EA;
+  opacity: 1;
+}
+.mdl-card:hover .hoverthisDiv{
+  opacity: 0;
 }
 
 /*
