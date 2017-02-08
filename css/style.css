@@ -153,6 +153,11 @@ h6{
   margin-bottom: 0px;
   bottom: 10rem;
 }
+.wrapperSpec{
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 
 /*hover div*/
 .hoverDiv{
@@ -198,7 +203,7 @@ margin-top: 3%;
   position: absolute;
   display: none;
 }
-.hoverthisDiv{
+/*.hoverthisDiv{
   text-align: center;
   width: 50%;
   height: 10%;
@@ -208,6 +213,9 @@ margin-top: 3%;
 .mdl-card:hover .hoverthisDiv{
   opacity: 0;
 }
+.hoverthisDiv:hover{
+  cursor: pointer;
+}*/
 
 /*
   filter

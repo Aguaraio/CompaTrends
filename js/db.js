@@ -221,7 +221,7 @@ function buildCards(dataTable,dbString,hover1,hover2,hover3,filterStr1, filterSt
 
       }
       if(i>0 & j==1){
-        name = '<div class="col-md-6 col-sm-6 col-xs-6"><div class="nameProd idbtn">'+ dataTable[i][j] +'</div></div>';
+        name = '<div class="col-md-6 col-sm-6 col-xs-6 wrapperSpec"><div class="nameProd idbtn">'+ dataTable[i][j] +'</div></div>';
       }
       if(i>0 & j==2){
           //price row
@@ -236,16 +236,16 @@ function buildCards(dataTable,dbString,hover1,hover2,hover3,filterStr1, filterSt
           //hoverDiv
           hoverSpecs= '<div class="specHover idbtn"><h6>'+ dataTable[i][j] +'</h6></div>';
       }
-      if(i>0 & j!=3 & j!=2){
+      if(i>0 & j!=1 & j!=3 & j!=2){
           //all specs
-          allSpecs= '<div class="col-md-6 col-sm-6 col-xs-6"><div class="idbtn">'+ dataTable[i][j] +'</div></div>';
+          allSpecs= '<div class="col-md-6 col-sm-6 col-xs-6 wrapperSpec"><div class="idbtn">'+ dataTable[i][j] +'</div></div>';
       }
 
       //ROWS
       //check if j isnt amazon image to generate rows with even and odd class
-      if (i>0 & j!=3) {
+      if (i>0 || j!=3) {
         var evenOddClassRow ='';
-        if(j%2===0){
+        if(j%2==0){
           evenOddClassRow = 'par';
         }else{
           evenOddClassRow = 'impar';
@@ -254,8 +254,7 @@ function buildCards(dataTable,dbString,hover1,hover2,hover3,filterStr1, filterSt
         if(j==1){
           rowsSpecsDiv[contSpecRow]='<div class="row '+ evenOddClassRow +'">'+ titleSpec[j]+name +'</div>';
           contSpecRow+=1;
-        }
-        if (j==2) {
+        }else if (j==2) {
           rowsSpecsDiv[contSpecRow]='<div class="row '+ evenOddClassRow +'">'+ titleSpec[j]+price +'</div>';
           contSpecRow+=1;
         }else{
@@ -304,9 +303,6 @@ function buildCards(dataTable,dbString,hover1,hover2,hover3,filterStr1, filterSt
                          '<div class="specDiv">'+ largeStringHover +'</div>'+
                     '</div>'+
                     '<div class="allSpecs">'+ largeStringSpecs +'</div>'+
-                    '<div class="hoverthisDiv">'+
-                       'Hover this card'+
-                    '</div>'+
                   '</div>'+
                   '<div class="row btnDiv">'+
                     '<a class="col-md-6 col-sm-6 col-xs-6"><div id="btnComparecoffee'+ index +'" class="btn button-1 imgCompare">COMPARE</div></a>'+
